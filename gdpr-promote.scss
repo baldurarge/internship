@@ -1,0 +1,88 @@
+
+.the-countdown-clock{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
+
+    .each-clock{
+        height: 150px;
+        width: 150px;
+        background: transparent;
+        border-radius: 50%;
+
+        box-shadow: rgba(33, 33, 33, 0.209) 0px 2px 4px 0px;
+        position: relative;
+        .number{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'bebas_neuebook';
+            font-size: 50px;
+        }
+
+        .type{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-family: 'HelveticaNeueLTStd45Light', sans-serif;
+            font-size: 15px;
+        }
+    }
+
+    .black-clock{
+        border: 5px solid black;
+        color: black;
+    }
+    .white-clock{
+        border: 5px solid #f1f1f1;
+        color: #f1f1f1;
+    }
+    .blue-clock{
+        border: 5px solid #2499CC;
+        color: #2499CC;
+    }
+    .orange-clock{
+        border: 5px solid #FD993E;
+        color: #FD993E;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+
+
+}
+
+@media screen and (max-width: 505px) {
+    .the-countdown-clock{
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .each-clock{
+            margin-top: 10px;
+            width: 130px;
+            height: 130px;
+
+            .number{
+                font-size: 40px;
+            }
+    
+            .type{
+                font-size: 12px;
+            }
+
+
+        }
+    }
+
+}
+
+
+

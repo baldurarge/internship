@@ -1,0 +1,106 @@
+<script>
+    $(function () {
+        var div = document.createElement('div');
+        var style = document.createElement('style');
+
+        div.className = 'special-div';
+
+        div.innerHTML =
+            '<h1>Temadag med LinkedIn</h1>\
+            <p style="font-size:20px;">Vi vil gerne invitere dig og dine kolleger til gratis Temadag med LinkedIn</p>\
+            <p style="font-size:20px;">Arrangementet foregår fra kl. 8:30-12 i følgende byer:</p>\
+            <div class="towns">\
+                <div class="each-town"><a href="https://hr-skyen.dk/wp-content/uploads/2018/02/Temadag_LinkedIn_Odense.pdf"><h3 style="color: #259AC8;">Odense</h3><p>5/3 2018</p><img src="https://hr-skyen.dk/wp-content/uploads/2018/02/download.svg"><p>download praktiske informationer</p></a></div>\
+                <div class="each-town"><a href="https://hr-skyen.dk/wp-content/uploads/2018/02/Temadag_LinkedIn_Aarhus.pdf" ><h3 style="color: #259AC8;">Aarhus</h3><p>7/3 2018</p><img src="https://hr-skyen.dk/wp-content/uploads/2018/02/download.svg"><p>download praktiske informationer</p></a></div>\
+                <div class="each-town"><a href="https://hr-skyen.dk/wp-content/uploads/2018/02/Temadag_LinkedIn_K%C3%B8benhavn.pdf"><h3 style="color: #259AC8;">København</h3><p>9/3 2018</p><img src="https://hr-skyen.dk/wp-content/uploads/2018/02/download.svg"><p>download praktiske informationer</p></a></div>\
+            </div>';
+
+        document.getElementById('temadagSpecial').appendChild(div);
+
+        style.innerHTML =
+            '.tema-special-around{display: flex;padding: 40px;}\
+.description p:nth-of-type(1),\
+.description p:nth-of-type(2),\
+.description p:nth-of-type(3),\
+.description p:nth-of-type(4),\
+.description p:nth-of-type(5),\
+.description p:nth-of-type(6),\
+.application br,\
+.title{\
+display: none;\
+}\
+.application{\
+margin: 0px !important;\
+}\
+.desc_column{\
+margin-top:30px;\
+}\
+.special-div{\
+text-align: center;\
+}\
+.special-div p{\
+margin-top: 5px;\
+}\
+.special-div p:first-of-type{\
+margin-top: 15px;\
+}\
+.towns{\
+display: flex;\
+flex-flow: row;\
+justify-content: center;\
+}\
+.towns .each-town{\
+width: 20%;\
+}\
+@media only screen and (max-width : 575px) {\
+    .tema-special-around{\
+        display: flex;\
+        padding: 40px;\
+        flex-flow: column;\
+    }\
+    .towns .each-town{\
+        width: 33%;\
+    }\
+}\
+.description {\
+    width: auto;\
+}';
+
+
+        document.getElementById('temadagSpecial').appendChild(style);
+
+
+
+        $('#content').css('min-height', '800px');
+        $('.road input').val('Nørregade 71, 1. th.');
+        $('.address_zip input').val('5000');
+        $('.city input').val('Odense C');
+        $('.termsAgreeWrapper input[type="checkbox"]').attr('checked', 'checked');
+        $('.road, .address_zip, .city, .termsAgreeWrapper, .info_column, .toggleDescription, .applyWithLinkedIn, .fieldset > h2, .tabtitles, .addthisWrapper').hide();
+        $('#applyposition').show();
+
+        setTimeout(function () {
+            try {
+                if ($('.ui-dialog-content img').prop('src').match('success')) {
+                    $('.ui-dialog-content div').html('Tak for din tilmelding');
+                } else {
+                    setTimeout(arguments.callee);
+                }
+            } catch (e) {
+                setTimeout(arguments.callee);
+            }
+        }, 100);
+
+        // lol
+        setInterval(function () {
+            $('button[type="submit"]').text('Tilmeld');
+        }, 10);
+
+
+
+
+
+
+
+    });
+</script>
